@@ -12,15 +12,16 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
-class MinMaxSum
+class Result
 {
-    public static void Solution()
-    {
-        List<long> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt64(arrTemp)).ToList();
-        Result(arr);
-    }
 
-    public static void Result(List<long> arr)
+    /*
+     * Complete the 'miniMaxSum' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static void miniMaxSum(List<long> arr)
     {
         var orderArr = arr.OrderBy(n => n);
 
@@ -28,5 +29,17 @@ class MinMaxSum
         var max = orderArr.Sum() - orderArr.First();
 
         Console.WriteLine(min + " " + max);
+    }
+
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+
+        List<long> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt64(arrTemp)).ToList();
+
+        Result.miniMaxSum(arr);
     }
 }

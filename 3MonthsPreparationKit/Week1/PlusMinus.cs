@@ -12,16 +12,16 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
-class PlusMinus
+class Result
 {
-    public static void Solution()
-    {
-        int n = Convert.ToInt32(Console.ReadLine().Trim());
-        List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
-        Result(arr);
-    }
 
-    public static void Result(List<int> arr)
+    /*
+     * Complete the 'plusMinus' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static void plusMinus(List<int> arr)
     {
         int positive = arr.Count(num => num > 0);
         int negative = arr.Count(num => num < 0);
@@ -34,5 +34,18 @@ class PlusMinus
         Console.WriteLine(resultPositive.ToString("F6"));
         Console.WriteLine(resultNegative.ToString("F6"));
         Console.WriteLine(resultZero.ToString("F6"));
+    }
+
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
+
+        Result.plusMinus(arr);
     }
 }
